@@ -5,9 +5,9 @@ function Navigation() {
     return (
         <nav>
             <div className="site-title">MINIATURE TRACKER</div>
-            <NavLink exact to="/">Home</NavLink>
-            <NavLink exact to="/sets">Sets</NavLink>
-            <NavLink exact to="/miniatures">Miniatures</NavLink>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/sets">Sets</NavLink>
+            <NavLink to="/miniatures">Miniatures</NavLink>
         </nav>
     )
 }
