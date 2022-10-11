@@ -18,7 +18,7 @@ function SetPage() {
     <div className="setPage">
         <h2>{ set.name }</h2>
         <h3>Release Date: { set.year }</h3>
-        { miniatureCards }
+        <div className="card-grid">{ miniatureCards }</div>
     </div>
   )
 }

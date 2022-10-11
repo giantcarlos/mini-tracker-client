@@ -44,30 +44,34 @@ nav a {
   columns: 6;
 }
 
-.miniatureList a {
-  color: #222;
-  text-decoration: none;
-  line-height: 1.5;
-}
-
 .setPage {
   padding: 2rem;
   text-align: center;
 }
 
-.setPage a {
-  color: #222;
+.card-grid {
+  margin-top: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.card-grid a {
   text-decoration: none;
-  line-height: 1.5;
 }
 
 .card {
-  max-width: 250px;
+  max-width: 200px;
   padding: 1rem;
   text-align: center;
   background: white;
   border-radius: .5rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 2);
+  color: #222
 }
 
 .card-image {
@@ -88,5 +92,5 @@ nav a {
 }
 
 .card-name {
-  font-size: 1rem;
+  padding: .5rem;
 }

@@ -13,7 +13,7 @@ function Miniatures() {
         const miniatureCards = () => miniatures.map((miniature, index) => <MiniatureCard key={index} miniature={miniature}/>)
 
     return (
-        <div className="miniatureList">
+        <div className="card-grid">
             {miniatureCards()}
         </div>
     )
