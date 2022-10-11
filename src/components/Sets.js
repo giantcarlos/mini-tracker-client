@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import SetCard from "./SetCard";
 
 function Sets() {
     const [ sets, setSets ] = useState([]);
@@ -8,10 +9,13 @@ function Sets() {
         .then(res => res.json())
         .then(data => setSets(data))
         })
-    
+
+    const setCards = () => sets.map(set => <SetCard key={set.id} id={set.id} set={set} />)
 
     return (
-        <p></p>
+        <div>
+            {setCards()}
+        </div>
     )
 }
 
