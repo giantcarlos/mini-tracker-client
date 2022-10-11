@@ -1,8 +1,11 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
-function MiniatureCard() {
+function MiniatureCard({ miniature }) {
   return (
-    <div>MiniatureCard</div>
+    <li>
+        <NavLink to={`/miniatures/${miniature.id}`}>{ miniature.name }</NavLink>
+    </li>
   )
 }
 

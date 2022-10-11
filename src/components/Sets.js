@@ -8,12 +8,12 @@ function Sets() {
         fetch('http://localhost:9292/miniature_sets')
         .then(res => res.json())
         .then(data => setSets(data))
-        })
+        }, [])
 
-    const setCards = () => sets.map(set => <SetCard key={set.id} id={set.id} set={set} />)
+    const setCards = () => sets.map((set, index) => <SetCard key={index} set={set} />)
 
     return (
-        <div>
+        <div className="setList">
             {setCards()}
         </div>
     )
