@@ -29,7 +29,7 @@ nav a {
 }
 
 .setList {
-  padding: 2rem;
+  padding: 3rem;
   columns: 3;
 }
 
@@ -40,8 +40,8 @@ nav a {
 }
 
 .miniatureList {
-  padding: 2rem;
-  columns: 5;
+  padding: 4rem;
+  columns: 6;
 }
 
 .miniatureList a {
@@ -59,4 +59,34 @@ nav a {
   color: #222;
   text-decoration: none;
   line-height: 1.5;
+}
+
+.card {
+  max-width: 250px;
+  padding: 1rem;
+  text-align: center;
+  background: white;
+  border-radius: .5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 2);
+}
+
+.card-image {
+  overflow: hidden;
+}
+
+.card-image > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: fill;
+  object-position: center;
+  transition: 200ms transform ease-in-out;
+}
+
+.card:hover > .card-image > img {
+  transform: scale(1.025);
+}
+
+.card-name {
+  font-size: 1rem;
 }
