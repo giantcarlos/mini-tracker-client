@@ -10,11 +10,12 @@ function Miniatures() {
         .then(data => setMiniatures(data))
         }, [])
 
-        const miniatureCards = () => miniatures.map((miniature, index) => <MiniatureCard key={index} miniature={miniature}/>)
+    const miniatureCards = () => miniatures.map((miniature, index) => <MiniatureCard key={index} miniature={miniature}/>)
 
     return (
-        <div className="card-grid">
-            {miniatureCards()}
+        <div>
+            <h3 className="counter">You have {miniatures.length} unique miniatures in your collection.</h3>
+            <div className="card-grid">{miniatureCards()}</div>
         </div>
     )
 }

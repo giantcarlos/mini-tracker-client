@@ -13,8 +13,9 @@ function Sets() {
     const setCards = () => sets.map((set, index) => <SetCard key={index} set={set} />)
 
     return (
-        <div className="setList">
-            {setCards()}
+        <div>
+            <h3 className="counter">You own miniatures from {sets.length} different sets.</h3>
+            <div className="setList">{setCards()}</div>
         </div>
     )
 }

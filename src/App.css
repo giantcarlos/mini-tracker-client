@@ -6,6 +6,7 @@ body {
   margin: 0;
   font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
   background-color: #fff;
+  color: #222;
 }
 
 nav {
@@ -29,7 +30,10 @@ nav a {
 }
 
 .setList {
-  padding: 3rem;
+  margin-top: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
   columns: 3;
 }
 
@@ -37,6 +41,10 @@ nav a {
   color: #222;
   text-decoration: none;
   line-height: 1.5;
+}
+
+.setList a:hover {
+  color:rgb(109, 17, 17)
 }
 
 .miniatureList {
@@ -94,3 +102,11 @@ nav a {
 .card-name {
   padding: .5rem;
 }
+ .counter {
+  margin-top: 2rem;
+  margin-left: 3rem;
+ }
+
+ h3 {
+  font-size: 1.1rem;
+ }
