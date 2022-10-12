@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 
 function SetCard({ set }) {
   return (
-    <li>
+    <div>
         <NavLink to={`/sets/${set.id}`}>{ set.name }</NavLink>
-    </li>
+    </div>
   )
 }
 

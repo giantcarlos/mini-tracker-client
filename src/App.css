@@ -114,3 +114,24 @@ nav a:hover {
  h3 {
   font-size: 1.1rem;
  }
+
+.mini-container {
+  max-width: 750px;
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ .mini-image {
+  float: right;
+ }
+
+ .mini-image > img {
+  width: 300px;
+  max-height: auto;
+ }
+
+ .mini-details {
+  margin-top: 2.5rem;
+  font-size: 1.1rem;
+ }
