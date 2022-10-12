@@ -14,7 +14,7 @@ function MiniaturePage() {
   return (
     <div className="mini-container">
         <div className="mini-image">
-             <img src={miniature.img_url} alt="alt"/>
+             <img src={miniature.img_url} alt="Photo needed."/>
         </div>
         <h2>{ miniature.name }</h2>
         <div className="mini-details">

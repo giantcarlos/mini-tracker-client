@@ -6,7 +6,7 @@ function MiniatureCard({ miniature }) {
      <NavLink to={`/miniatures/${miniature.id}`}>
         <div className="card">
             <div className="card-image">
-                <img src={miniature.img_url} alt="cover"/>
+                <img src={miniature.img_url} alt="Photo needed."/>
             </div>
             <div className="card-name">{miniature.name}</div>
         </div>
