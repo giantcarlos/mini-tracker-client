@@ -5,8 +5,10 @@ import Navigation from './components/Navigation';
 import Home from './components/Home';
 import Sets from './components/Sets';
 import SetPage from './components/SetPage';
+import NewSet from './components/NewSet';
 import Miniatures from './components/Miniatures';
 import MiniaturePage from './components/MiniaturePage';
+import NewMiniature from './components/NewMiniature';
 
 function App() {
   
@@ -17,8 +19,10 @@ function App() {
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/sets" element={<Sets/>}/>
           <Route exact path="/sets/:id" element={<SetPage/>}/>
+          <Route exact path="/newset" element={<NewSet/>}/>
           <Route exact path="/miniatures" element={<Miniatures/>}/>
           <Route exact path="/miniatures/:id" element={<MiniaturePage/>}/>
+          <Route exact path="/sets/:id/newminiature" element={<NewMiniature/>}/>
         </Routes>
     </div>
 
