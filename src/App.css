@@ -29,8 +29,12 @@ nav a {
   padding: .75rem;
 }
 
+nav .active {
+  color: #999;
+}
+
 nav a:hover {
-  color: #222
+  color: #999
 }
 
 .setList {
@@ -67,7 +71,7 @@ nav a:hover {
   margin-right: 3rem;
   margin-bottom: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
   align-items: flex-start;
 }
