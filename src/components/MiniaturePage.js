@@ -20,6 +20,8 @@ function MiniaturePage() {
         <div className="mini-details">
             <p>Rarity: {miniature.rarity}</p>
             <p>Size: {miniature.size}</p>
+            <p>Set: {miniature.miniature_set?.name}</p>
+            <p>Release date: {miniature.miniature_set?.year}</p>
             <p>Number of units in collection: {miniature.units}</p>
         </div>
     </div>
