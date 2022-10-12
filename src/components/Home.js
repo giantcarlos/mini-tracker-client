@@ -15,8 +15,8 @@ function Home() {
     return (
         <div className="setPage">
             <div className="quote"><b>
-                <p><i>"Stop using Excel spreadsheets. Miniature Tracker exists!"</i></p> 
-                <p>- Gian, creator of the Miniature Tracker</p></b></div>
+                <p><i>"Stop using Excel spreadsheets. Miniature Tracker exists!"</i></p></b>
+                <p>- Gian, creator of the Miniature Tracker</p></div>
             <h3>Latest miniatures in your collection:</h3>
             <div className="card-grid">{ miniatureCards }</div>
         </div>
