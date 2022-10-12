@@ -29,6 +29,10 @@ nav a {
   padding: .75rem;
 }
 
+nav a:hover {
+  color: #222
+}
+
 .setList {
   margin-top: 2rem;
   margin-left: 3rem;
