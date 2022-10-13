@@ -22,7 +22,7 @@ function App() {
           <Route exact path="/newset" element={<NewSet/>}/>
           <Route exact path="/miniatures" element={<Miniatures/>}/>
           <Route exact path="/miniatures/:id" element={<MiniaturePage/>}/>
-          <Route exact path="/sets/:id/newminiature" element={<NewMiniature/>}/>
+          <Route exact path="/sets/:id/miniatures/new" element={<NewMiniature/>}/>
         </Routes>
     </div>
 

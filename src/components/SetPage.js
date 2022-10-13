@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import MiniatureCard from './MiniatureCard';
 
 function SetPage() {
@@ -18,6 +18,9 @@ function SetPage() {
     <div className="setPage">
         <h2>{ set.name }</h2>
         <h3>Release Date: { set.year }</h3>
+        <Link to={`/sets/${id}/miniatures/new`}>
+            <button className="form-link" >Add Miniature</button>
+        </Link>
         <div className="card-grid">{ miniatureCards }</div>
     </div>
   )

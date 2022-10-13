@@ -15,10 +15,11 @@ function Sets() {
 
     return (
         <div>
-            <h3 className="counter">You own miniatures from {sets.length} different sets.</h3>
-            <Link to={"/newset"}>
-                    <button className="form-link" >Add a set.</button>
-            </Link>
+            <div className="counter">You own miniatures from {sets.length} different sets.
+                <Link to={"/newset"}>
+                    <button className="form-link" >Add Set</button>
+                </Link>
+            </div>
             <div className="setList">{setCards()}</div>
         </div>
     )

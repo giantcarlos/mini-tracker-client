@@ -30,15 +30,15 @@ nav a {
 }
 
 nav .active {
-  color: #999;
+  color: #ccc;
 }
 
 nav a:hover {
-  color: #999
+  color: #ccc
 }
 
 .setList {
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-left: 3rem;
   margin-right: 3rem;
   margin-bottom: 3rem;
@@ -113,6 +113,9 @@ nav a:hover {
  .counter {
   margin-top: 2rem;
   margin-left: 3rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: bold;
  }
 
  h3 {
@@ -146,3 +149,17 @@ nav a:hover {
   margin-top: 2.5rem;
   font-size: 1.1rem;
  }
+
+ .form-link {
+  background: #fff;
+  font-size: .9rem;
+  border-radius: .25em;
+  border-color: #777;
+  cursor: pointer;
+  padding: .25rem;
+  margin: 1rem;
+}
+
+.form-link:hover, .form-link:focus {
+  background: #ddd;
+}
