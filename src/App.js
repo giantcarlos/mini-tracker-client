@@ -11,18 +11,17 @@ import MiniaturePage from './components/MiniaturePage';
 import NewMiniature from './components/NewMiniature';
 
 function App() {
-  
-  return (
+    return (
     <div className = "App">
       <Navigation/>
         <Routes>
-          <Route exact path="/" element={<Home/>}/>
-          <Route exact path="/sets" element={<Sets/>}/>
-          <Route exact path="/sets/:id" element={<SetPage/>}/>
-          <Route exact path="/newset" element={<NewSet/>}/>
-          <Route exact path="/miniatures" element={<Miniatures/>}/>
-          <Route exact path="/miniatures/:id" element={<MiniaturePage/>}/>
-          <Route exact path="/sets/:id/miniatures/new" element={<NewMiniature/>}/>
+          <Route exact path="/" element={<Home />}/>
+          <Route exact path="/sets" element={<Sets />}/>
+          <Route path="/sets/:id" element={<SetPage />}/>
+          <Route exact path="/newset" element={<NewSet />}/>
+          <Route exact path="/miniatures" element={<Miniatures />}/>
+          <Route path="/miniatures/:id" element={<MiniaturePage />}/>
+          <Route path="/sets/:id/miniatures/new" element={<NewMiniature/>}/>
         </Routes>
     </div>
 

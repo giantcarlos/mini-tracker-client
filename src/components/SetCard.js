@@ -1,10 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function SetCard({ set }) {
   return (
     <div>
-        <NavLink to={`/sets/${set.id}`}>{ set.name }</NavLink>
+        <Link to={`/sets/${set.id}`}>{ set.name }</Link>
     </div>
   )
 }

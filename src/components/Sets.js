@@ -5,22 +5,26 @@ import SetCard from "./SetCard";
 function Sets() {
     const [ sets, setSets ] = useState([]);
 
-    useEffect (() => {
-        fetch('http://localhost:9292/miniature_sets')
-        .then(res => res.json())
-        .then(data => setSets(data))
+    useEffect(() => {
+        const fetchData = async () => {
+        const resp = await fetch('http://localhost:9292/miniature_sets')
+        const data = await resp.json();
+        setSets(data)
+        }
+        fetchData()
+            .catch(console.error);
         }, [])
-
-    const setCards = () => sets.map((set, index) => <SetCard key={index} set={set} />)
+  
+    const setCards = () => sets?.map((set, index) => <SetCard key={index} set={set} />) 
 
     return (
         <div>
-            <div className="counter">You own miniatures from {sets.length} different sets.
+            <div className="counter">You own miniatures from {sets?.length} different sets.
                 <Link to={"/newset"}>
                     <button className="form-link" >Add Set</button>
                 </Link>
             </div>
-            <div className="setList">{setCards()}</div>
+            <div className="set-list">{setCards()}</div>
         </div>
     )
 }

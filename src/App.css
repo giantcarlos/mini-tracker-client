@@ -37,7 +37,7 @@ nav a:hover {
   color: #ccc
 }
 
-.setList {
+.set-list {
   margin-top: 1rem;
   margin-left: 3rem;
   margin-right: 3rem;
@@ -45,24 +45,28 @@ nav a:hover {
   columns: 3;
 }
 
-.setList a {
+.set-list a {
   color: #222;
   text-decoration: none;
   line-height: 1.65;
 }
 
-.setList a:hover {
+.set-list a:hover {
   color:rgb(109, 17, 17)
 }
 
-.miniatureList {
-  padding: 4rem;
-  columns: 6;
-}
-
-.setPage {
+.set-page {
   padding: 2rem;
   text-align: center;
+}
+
+.set-link a {
+  text-decoration: none;
+  color:rgb(109, 17, 17)
+}
+
+.set-link a:hover {
+  color:rgb(170, 19, 19);
 }
 
 .card-grid {
@@ -152,7 +156,7 @@ nav a:hover {
 
  .form-link {
   background: #fff;
-  font-size: .9rem;
+  font-size: 1rem;
   border-radius: .25em;
   border-color: #777;
   cursor: pointer;
@@ -162,4 +166,44 @@ nav a:hover {
 
 .form-link:hover, .form-link:focus {
   background: #ddd;
+}
+
+.set-form {
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  padding: 1rem;
+  text-align: center;
+  background: white;
+  border-radius: .25rem;
+}
+
+.form-text {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 2.25rem;
+  text-align: left;
+  line-height: 1.25;
+}
+
+.form-btn {
+  margin-top: 2rem;
+  max-width: 125px;
+  padding: .225rem;
+  background-color: white;
+}
+
+.form-btn:hover, .form-btn:focus {
+  background: #ccc;
+  cursor: pointer;
+}
+
+input {
+  font-size: 1rem;
+  color: inherit;
+  width: 100%;
+  padding: .25rem 5px;
+  margin: .4rem 0;
 }

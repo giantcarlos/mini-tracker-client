@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import MiniatureCard from './MiniatureCard';
 
 function SetPage() {
+    const navigate = useNavigate();
     const [ set, setSet ] = useState({});
     const { id } = useParams();
 
@@ -14,16 +15,23 @@ function SetPage() {
 
     const miniatureCards = set.miniatures?.map((miniature, index)  => <MiniatureCard key={ index } miniature={ miniature }/>)
 
+    const handleDelete = async () => {
+        const resp = await fetch(`http://localhost:9292/miniature_sets/${id}`, 
+            { method: "DELETE" })
+        navigate("/sets");
+    }
+
   return (
-    <div className="setPage">
+    <div className="set-page">
         <h2>{ set.name }</h2>
         <h3>Release Date: { set.year }</h3>
         <Link to={`/sets/${id}/miniatures/new`}>
             <button className="form-link" >Add Miniature</button>
         </Link>
-        <div className="card-grid">{ miniatureCards }</div>
+        <button className="form-link" onClick={handleDelete}>Delete Set</button>
+        <div className="card-grid">{miniatureCards}</div>
     </div>
   )
 }
 
-export default SetPage
+export default SetPage;
