@@ -25,7 +25,7 @@ function EditMiniature() {
     }, [])
 
 
-    const handleSubmit = async (e)  => {
+    const handleSubmit = async e  => {
         e.preventDefault();
         const headers = {
             "Accept": 'application/json',
