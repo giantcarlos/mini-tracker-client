@@ -70,7 +70,7 @@ nav a:hover {
 }
 
 .card-grid {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-left: 3rem;
   margin-right: 3rem;
   margin-bottom: 3rem;
@@ -161,7 +161,7 @@ nav a:hover {
   border-color: #777;
   cursor: pointer;
   padding: .25rem;
-  margin: 1rem;
+  margin: .75rem;
 }
 
 .form-link:hover, .form-link:focus {
@@ -222,4 +222,28 @@ input {
 .mini-btn:hover, .mini-btn:focus {
   background: #ccc;
   cursor: pointer;
+}
+
+.mini-header {
+  display: inline-block;
+}
+
+select {
+  text-align: center;
+  margin-right: 3rem;
+  background: #fff;
+  font-size: .9rem;
+  border-radius: .25em;
+  border-color: #777;
+  cursor: pointer;
+  padding: .25rem;
+}
+
+label {
+  font-weight: bold;
+  margin-right: .25rem;
+}
+
+.sort-by {
+  margin-left: 3rem;
 }
