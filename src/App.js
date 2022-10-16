@@ -17,11 +17,11 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />}/>
           <Route exact path="/sets" element={<Sets />}/>
-          <Route path="/sets/:id" element={<SetPage />}/>
+          <Route exact path="/sets/:id" element={<SetPage />}/>
           <Route exact path="/newset" element={<NewSet />}/>
           <Route exact path="/miniatures" element={<Miniatures />}/>
-          <Route path="/miniatures/:id" element={<MiniaturePage />}/>
-          <Route path="/sets/:id/miniatures/new" element={<NewMiniature/>}/>
+          <Route exact path="/miniatures/:id" element={<MiniaturePage />}/>
+          <Route exact path="/sets/:miniatureSetId/miniatures/new" element={<NewMiniature/>}/>
         </Routes>
     </div>
 

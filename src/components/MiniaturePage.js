@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
 function MiniaturePage() {
     const [ miniature, miniatureSet ] = useState({});
     const { id } = useParams();
+    const navigate = useNavigate();
 
     useEffect (() => {
         fetch(`http://localhost:9292/miniatures/${id}`)
         .then(res => res.json())
         .then(data => miniatureSet(data))
         }, [])
+
+    const handleDelete = async () => {
+        const resp = await fetch(`http://localhost:9292/miniatures/${id}`, 
+            { method: "DELETE" })
+        navigate("/miniatures");
+        }
 
   return (
     <div className="mini-container">
@@ -25,6 +32,8 @@ function MiniaturePage() {
             </p>
             <p>Release date: {miniature.miniature_set?.year}</p>
             <p>Number of units in collection: {miniature.units}</p>
+            <button className="mini-btn" onClick={handleDelete}>Edit Miniature</button>
+            <button className="mini-btn" onClick={handleDelete}>Delete Miniature</button>
         </div>
     </div>
   )

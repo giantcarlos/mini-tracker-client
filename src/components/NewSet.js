@@ -24,11 +24,9 @@ function NewSet() {
     }
 
     const handleChange = (e) => {
-        const key = e.target.id
-        const value = e.target.value
         setFormData({
             ...formData,
-            [key]: value
+            [e.target.id]: e.target.value
         })
     }
 
