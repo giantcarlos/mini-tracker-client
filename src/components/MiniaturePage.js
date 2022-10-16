@@ -32,7 +32,9 @@ function MiniaturePage() {
             </p>
             <p>Release date: {miniature.miniature_set?.year}</p>
             <p>Number of units in collection: {miniature.units}</p>
-            <button className="mini-btn" onClick={handleDelete}>Edit Miniature</button>
+            <Link to={`/miniatures/${id}/edit`}>
+                <button className="mini-btn">Edit Miniature</button>
+            </Link>
             <button className="mini-btn" onClick={handleDelete}>Delete Miniature</button>
         </div>
     </div>

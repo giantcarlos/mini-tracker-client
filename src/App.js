@@ -10,6 +10,7 @@ import EditSet from './components/EditSet';
 import Miniatures from './components/Miniatures';
 import MiniaturePage from './components/MiniaturePage';
 import NewMiniature from './components/NewMiniature';
+import EditMiniature from './components/EditMiniature';
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/miniatures" element={<Miniatures />}/>
           <Route exact path="/miniatures/:id" element={<MiniaturePage />}/>
           <Route exact path="/sets/:miniatureSetId/miniatures/new" element={<NewMiniature/>}/>
+          <Route exact path="/miniatures/:id/edit" element={<EditMiniature />}/>
         </Routes>
     </div>
 

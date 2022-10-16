@@ -28,7 +28,7 @@ function SetPage() {
         <Link to={`/sets/${id}/miniatures/new`}>
             <button className="form-link" >Add Miniature</button>
         </Link>
-        <Link to={`/sets/${id}/miniatures/new`}>
+        <Link to={`/sets/${id}/edit`}>
             <button className="form-link" >Edit Set</button>
         </Link>
         <button className="form-link" onClick={handleDelete}>Delete Set</button>
