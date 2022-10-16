@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import MiniatureCard from "./MiniatureCard";
 
 function Miniatures() {
     const [ miniatures, setMiniatures ] = useState([]);
-    const navigate = useNavigate();
     
     useEffect(() => {
         const fetchData = async () => {
@@ -22,7 +20,6 @@ function Miniatures() {
         const resp = await fetch(`http://localhost:9292/miniatures/${e.target.value}`);
         const data = await resp.json();
         setMiniatures(data);
-        navigate("/miniatures")
         }
 
     return (
