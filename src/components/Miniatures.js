@@ -30,8 +30,8 @@ function Miniatures() {
                     <label>Sort by:</label>
                     <select name="sort-by" id="sort-by" onChange={handleChange}>
                         <option value="alphabetical" defaultValue>Alphabetical</option>
-                        <option value="oldest">Oldest</option>
-                        <option value="latest">Latest</option>
+                        <option value="oldest">Oldest Additions</option>
+                        <option value="latest">Newest Additions</option>
                     </select>
                 </div>
             </div>
