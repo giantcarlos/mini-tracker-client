@@ -172,7 +172,7 @@ nav a:hover {
   margin: 0 auto;
   margin-top: 3rem;
   margin-bottom: 4rem;
-  max-width: 600px;
+  max-width: 400px;
   padding: 1rem;
   text-align: center;
   background: white;
@@ -182,7 +182,7 @@ nav a:hover {
 .form-text {
   padding-left: 5rem;
   padding-right: 5rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   margin-bottom: 2.25rem;
   text-align: left;
   line-height: 1.25;

@@ -22,7 +22,6 @@ function NewMiniature() {
     const handleSubmit = async (e)  => {
         e.preventDefault();
         const headers = {
-            "Accept": 'application/json',
             "Content-Type": "application/json"
         }
         const options = {
@@ -55,7 +54,7 @@ function NewMiniature() {
                 <input type="textarea" id="size" value={formData.size} onChange={handleChange} /><br />
             </label>
             <label htmlFor="units">Units: 
-                <input type="textarea" id="units" value={formData.units} onChange={handleChange} /><br />
+                <input type="number" id="units" value={formData.units} onChange={handleChange} /><br />
             </label>
             <label htmlFor="img_url">Image URL: 
                 <input type="textarea" id="img_url" value={formData.img_url} onChange={handleChange} /><br />

@@ -11,7 +11,6 @@ function NewSet() {
     const handleSubmit = async e  => {
         e.preventDefault();
         const headers = {
-            "Accept": 'application/json',
             "Content-Type": "application/json"
         }
         const options = {
@@ -38,7 +37,7 @@ function NewSet() {
                 <input type="textarea" id="name" value={formData.name} onChange={handleChange} autoFocus={true}/><br />
             </label>
             <label htmlFor="year">Year: 
-                <input type="textarea" id="year" value={formData.year} onChange={handleChange} /><br />
+                <input type="integer" id="year" value={formData.year} onChange={handleChange} /><br />
             </label>
             <input type="submit" value="Submit" className="form-btn" />
         </div>
