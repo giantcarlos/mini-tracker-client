@@ -1,6 +1,6 @@
-# **Mini Tracker (Client/Front-End)**
+# **Miniature Tracker (Client/Front-End)**
 
-Mini Tracker is an application used to catalog D&D and Tabletop RPG miniatures.
+Miniature Tracker is an application used to catalog D&D and Tabletop RPG miniatures.
 
 
 ### **Features and Objectives**
