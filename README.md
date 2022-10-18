@@ -37,7 +37,7 @@ Miniature Tracker is an application used to catalog D&D and Tabletop RPG miniatu
 ### **Demo Video**
 ---
 
-- Coming soon.
+- https://youtu.be/6RkCSsI5L7A
 
 
 ### **Project Blog**
