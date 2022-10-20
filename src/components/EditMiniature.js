@@ -54,10 +54,21 @@ function EditMiniature() {
                 <input type="textarea" id="name" value={formData.name} onChange={handleChange} autoFocus={true} /><br />
             </label>
             <label htmlFor="rarity">Rarity: 
-                <input type="textarea" id="rarity" value={formData.rarity} onChange={handleChange} /><br />
+                <select className="new-select" type="textarea" id="rarity" value={formData.rarity} onChange={handleChange}>
+                    <option value="Common">Common</option>
+                    <option value="Uncommon">Uncommon</option>
+                    <option value="Rare">Rare</option>
+                    <option value="Unique">Unique</option>
+                </select><br />
             </label>
             <label htmlFor="size">Size: 
-                <input type="textarea" id="size" value={formData.size} onChange={handleChange} /><br />
+                <select className="new-select" type="textarea" id="size" value={formData.size} onChange={handleChange}>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                    <option value="Huge">Huge</option>
+                    <option value="Gargantuan">Gargantuan</option>
+                </select><br />
             </label>
             <label htmlFor="units">Number of units: 
                 <input type="number" id="units" min="1" value={formData.units} onChange={handleChange} /><br />

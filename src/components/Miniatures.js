@@ -28,7 +28,7 @@ function Miniatures() {
                 <h3 className="counter">You have {miniatures.length} unique miniatures in your collection.</h3>
                 <div className="sort-by">
                     <label>Sort by:</label>
-                    <select name="sort-by" id="sort-by" onChange={handleChange}>
+                    <select className="sort-select" name="sort-by" id="sort-by" onChange={handleChange}>
                         <option value="alphabetical" defaultValue>Alphabetical</option>
                         <option value="oldest">Oldest Additions</option>
                         <option value="latest">Newest Additions</option>

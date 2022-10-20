@@ -200,6 +200,15 @@ nav a:hover {
   cursor: pointer;
 }
 
+.new-select {
+  font-size: 1rem;
+  color: inherit;
+  cursor: pointer;
+  width: 100%;
+  padding: .25rem 5px;
+  margin: .4rem 0;
+}
+
 input {
   font-size: 1rem;
   color: inherit;
@@ -228,13 +237,10 @@ input {
   display: inline-block;
 }
 
-select {
-  text-align: center;
+.sort-select {
   margin-right: 3rem;
   background: #fff;
   font-size: .9rem;
-  border-radius: .25em;
-  border-color: #777;
   cursor: pointer;
   padding: .25rem;
 }

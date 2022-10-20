@@ -6,7 +6,7 @@ function MiniatureCard({ miniature }) {
      <Link to={`/miniatures/${miniature.id}`}>
         <div className="card">
             <div className="card-image">
-                <img src={miniature.img_url} alt="Photo needed."/>
+                <img src={miniature.img_url} alt="Image not found."/>
             </div>
             <div className="card-name">{miniature.name}</div>
         </div>
