@@ -45,7 +45,7 @@ function NewMiniature() {
         <h2>New Miniature for {set.name}</h2>
         <div className="form-text">
             <label htmlFor="name">Name: 
-                <input type="textarea" id="name" value={formData.name} onChange={handleChange} autoFocus={true} /><br />
+                <input type="textarea" id="name" value={formData.name} onChange={handleChange} required="required" autoFocus={true} /><br />
             </label>
             <label htmlFor="rarity">Rarity: 
                 <select className="new-select" type="textarea" id="rarity" value={formData.rarity} onChange={handleChange}>
