@@ -29,8 +29,17 @@ function NewMiniature() {
             headers,
             body: JSON.stringify(formData)
         }
-        await fetch(`http://localhost:9292/miniature_sets/${miniatureSetId}/miniatures`, options)
+        const resp = await fetch(`http://localhost:9292/miniature_sets/${miniatureSetId}/miniatures`, options);
+        const data = await resp.json();
+        addMiniature(data)
         navigate(`/sets/${miniatureSetId}`);
+    }
+
+    const addMiniature = (data) => {
+        const updatedSet = {
+            ...set,
+            miniatures: [set.miniatures, data] 
+        }
     }
 
     const handleChange = (e) => {

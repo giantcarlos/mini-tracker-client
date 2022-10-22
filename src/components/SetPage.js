@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import MiniatureCard from './MiniatureCard';
 
-function SetPage() {
+function SetPage({ sets, setSets }) {
     const navigate = useNavigate();
     const [ set, setSet ] = useState({});
     const { id } = useParams();
@@ -18,7 +18,12 @@ function SetPage() {
     const handleDelete = async () => {
         const resp = await fetch(`http://localhost:9292/miniature_sets/${id}`, 
             { method: "DELETE" })
+        removeSet(id);
         navigate("/sets");
+    }
+
+    const removeSet = id => {
+        setSets(sets.filter(set => set.id !=id))
     }
 
   return (

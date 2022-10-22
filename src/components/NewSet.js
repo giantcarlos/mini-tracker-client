@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function NewSet() {
+function NewSet({ sets, setSets }) {
     const navigate = useNavigate();
     const [ formData, setFormData ] = useState({
         name: "",
@@ -18,8 +18,14 @@ function NewSet() {
             headers,
             body: JSON.stringify(formData)
         }
-        await fetch("http://localhost:9292/miniature_sets", options)
+        const resp = await fetch("http://localhost:9292/miniature_sets", options)
+        const data = await resp.json();
+        addSet(data)
         navigate("/sets");
+    }
+
+    const addSet = (data) => {
+        setSets([...sets, data])
     }
 
     const handleChange = (e) => {

@@ -70,7 +70,7 @@ nav a:hover {
 }
 
 .card-grid {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   margin-left: 3rem;
   margin-right: 3rem;
   margin-bottom: 3rem;
@@ -237,19 +237,6 @@ input {
   display: inline-block;
 }
 
-.sort-select {
-  margin-right: 3rem;
-  background: #fff;
-  font-size: .9rem;
-  cursor: pointer;
-  padding: .25rem;
-}
-
 label {
   font-weight: bold;
-  margin-right: .25rem;
-}
-
-.sort-by {
-  margin-left: 3rem;
 }

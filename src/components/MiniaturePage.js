@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
-function MiniaturePage() {
+function MiniaturePage({ miniatures, setMiniatures }) {
     const [ miniature, miniatureSet ] = useState({});
     const { id } = useParams();
     const navigate = useNavigate();
@@ -15,8 +15,13 @@ function MiniaturePage() {
     const handleDelete = async () => {
         const resp = await fetch(`http://localhost:9292/miniatures/${id}`, 
             { method: "DELETE" })
-        navigate("/miniatures");
-        }
+        removeMiniature(id)
+        navigate(`/sets/${miniature.miniature_set?.id}`);
+    }
+
+    const removeMiniature = id => {
+        setMiniatures(miniatures.filter(miniature => miniature.id !=id))
+    }
 
   return (
     <div className="mini-container">

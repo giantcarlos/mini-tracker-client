@@ -44,3 +44,15 @@ Miniature Tracker is an application used to catalog D&D and Tabletop RPG miniatu
 ---
 
 - https://medium.com/@giantainocarlos/dungeons-and-dragons-and-databases-leveling-up-with-object-relational-mapping-dcfc9997fb25
+
+
+const updatedSet = {
+    ...set,
+    miniatures: [...set.miniatures, miniature] 
+}
+
+const updatedSets = sets.map(s => s.id===updatedSet.id ? updatedSet : s)
+
+setSets(updatedSets)
+
+setMiniatures([...miniatures, miniatures])
