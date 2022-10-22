@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-function EditSet() {
+function EditSet({ sets, setSets }) {
     const navigate = useNavigate();
     const [ set, setSet ] = useState({});
     const { id } = useParams();
@@ -31,8 +31,14 @@ function EditSet() {
             headers,
             body: JSON.stringify(formData)
         }
-        await fetch(`http://localhost:9292/miniature_sets/${id}`, options)
+        const resp = await fetch(`http://localhost:9292/miniature_sets/${id}`, options);
+        const data = await resp.json();
+        updateSets(data);
         navigate(`/sets/${id}`);
+    }
+
+    const updateSets = (data) => {
+        setSets(sets?.map(s => s.id===data.id ? data : s));
     }
 
     const handleChange = (e) => {

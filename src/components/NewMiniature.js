@@ -40,6 +40,7 @@ function NewMiniature() {
             ...set,
             miniatures: [set.miniatures, data] 
         }
+        setSet(updatedSet);
     }
 
     const handleChange = (e) => {
