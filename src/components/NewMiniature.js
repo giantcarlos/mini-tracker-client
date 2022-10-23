@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-function NewMiniature() {
+function NewMiniature({ miniatures, setMiniatures, sets }) {
     const navigate = useNavigate();
-    const [ set, setSet ] = useState({})
     const { miniatureSetId } = useParams();
+    const set = sets.find(s => s.id===parseInt(miniatureSetId))
     const [ formData, setFormData ] = useState({
         name: "",
         rarity: "",
@@ -12,12 +12,6 @@ function NewMiniature() {
         units: "",
         img_url: ""
     });
-
-    useEffect (() => {
-        fetch(`http://localhost:9292/miniature_sets/${miniatureSetId}`)
-        .then(res => res.json())
-        .then(data => setSet(data))
-        }, [])
 
     const handleSubmit = async (e)  => {
         e.preventDefault();
@@ -36,11 +30,7 @@ function NewMiniature() {
     }
 
     const addMiniature = (data) => {
-        const updatedSet = {
-            ...set,
-            miniatures: [set.miniatures, data] 
-        }
-        setSet(updatedSet);
+        setMiniatures([data, ...miniatures])
     }
 
     const handleChange = (e) => {
@@ -52,7 +42,7 @@ function NewMiniature() {
 
   return (
     <form className="set-form" onSubmit={handleSubmit}>
-        <h2>New Miniature for {set.name}</h2>
+        <h2>New Miniature for {set?.name}</h2>
         <div className="form-text">
             <label htmlFor="name">Name: 
                 <input type="textarea" id="name" value={formData.name} onChange={handleChange} required="required" autoFocus={true} /><br />

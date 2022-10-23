@@ -3,23 +3,16 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 function EditSet({ sets, setSets }) {
     const navigate = useNavigate();
-    const [ set, setSet ] = useState({});
     const { id } = useParams();
+    const set = sets.find(set => set.id===parseInt(id))
     const [ formData, setFormData ] = useState({
         name: "",
         year: ""
     });
 
-    useEffect (() => {
-        const fetchData = async () => {
-        const resp = await fetch(`http://localhost:9292/miniature_sets/${id}`);
-        const data = await resp.json();
-        setSet(data);
-        setFormData(data);
-        }
-        fetchData()
-            .catch(console.error);
-    }, [])
+    useEffect(() => {
+        setFormData(set);
+        }, [])
 
     const handleSubmit = async e  => {
         e.preventDefault();
@@ -38,7 +31,8 @@ function EditSet({ sets, setSets }) {
     }
 
     const updateSets = (data) => {
-        setSets(sets?.map(s => s.id===data.id ? data : s));
+        const updatedSet = {...data, miniatures: [...set.miniatures]};
+        setSets(sets.map(s => s.id===updatedSet.id ? updatedSet : s));
     }
 
     const handleChange = (e) => {

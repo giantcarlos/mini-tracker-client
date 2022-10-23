@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-function EditMiniature() {
+function EditMiniature({ miniatures, setMiniatures }) {
     const navigate = useNavigate();
-    const [ miniature, setMiniature ] = useState({})
     const { id } = useParams();
+    const miniature = miniatures.find(mini => mini.id===parseInt(id))
     const [ formData, setFormData ] = useState({
         name: "",
         rarity: "",
@@ -13,30 +13,26 @@ function EditMiniature() {
         img_url: ""
     });
 
-    useEffect (() => {
-        const fetchData = async () => {
-        const resp = await fetch(`http://localhost:9292/miniatures/${id}`);
-        const data = await resp.json();
-        setMiniature(data);
-        setFormData(data);
-        }
-        fetchData()
-            .catch(console.error);
-    }, [])
+    useEffect(() => {
+        setFormData(miniature);
+        }, [])
 
-
-    const handleSubmit = async e  => {
+    const handleSubmit = e => {
         e.preventDefault();
-        const headers = {
-            "Content-Type": "application/json"
-        }
-        const options = {
+        fetch(`http://localhost:9292/miniatures/${id}`, {
             method: "PATCH",
-            headers,
-            body: JSON.stringify(formData)
+            headers: {
+                "Content-Type": "application/json"
+            },
+             body: JSON.stringify(formData)
+        })
+            .then(r => r.json())
+            .then((data) => updateMiniature(data))
+            navigate(`/miniatures/${id}`);
         }
-        await fetch(`http://localhost:9292/miniatures/${id}`, options)
-        navigate(`/miniatures/${id}`);
+
+    const updateMiniature = (data) => {
+        setMiniatures(miniatures?.map(mini => mini.id===data.id ? data : mini));
     }
 
     const handleChange = (e) => {
@@ -48,13 +44,13 @@ function EditMiniature() {
 
   return (
     <form className="set-form" onSubmit={handleSubmit}>
-        <h2>Edit {miniature.name}</h2>
+        <h2>Edit {miniature?.name}</h2>
         <div className="form-text">
             <label htmlFor="name">Name: 
-                <input type="textarea" id="name" value={formData.name} onChange={handleChange} autoFocus={true} /><br />
+                <input type="textarea" id="name" value={formData?.name} onChange={handleChange} autoFocus={true} /><br />
             </label>
             <label htmlFor="rarity">Rarity: 
-                <select className="new-select" type="textarea" id="rarity" value={formData.rarity} onChange={handleChange}>
+                <select className="new-select" type="textarea" id="rarity" value={formData?.rarity} onChange={handleChange}>
                     <option value="Common">Common</option>
                     <option value="Uncommon">Uncommon</option>
                     <option value="Rare">Rare</option>
@@ -62,7 +58,7 @@ function EditMiniature() {
                 </select><br />
             </label>
             <label htmlFor="size">Size: 
-                <select className="new-select" type="textarea" id="size" value={formData.size} onChange={handleChange}>
+                <select className="new-select" type="textarea" id="size" value={formData?.size} onChange={handleChange}>
                     <option value="Small">Small</option>
                     <option value="Medium">Medium</option>
                     <option value="Large">Large</option>
@@ -71,10 +67,10 @@ function EditMiniature() {
                 </select><br />
             </label>
             <label htmlFor="units">Number of units: 
-                <input type="number" id="units" min="1" value={formData.units} onChange={handleChange} /><br />
+                <input type="number" id="units" min="1" value={formData?.units} onChange={handleChange} /><br />
             </label>
             <label htmlFor="img_url">Image URL: 
-                <input type="textarea" id="img_url" value={formData.img_url} onChange={handleChange} /><br />
+                <input type="textarea" id="img_url" value={formData?.img_url} onChange={handleChange} /><br />
             </label>
             <input type="submit" value="Submit" className="form-btn" />
         </div>

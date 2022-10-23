@@ -56,3 +56,17 @@ const updatedSets = sets.map(s => s.id===updatedSet.id ? updatedSet : s)
 setSets(updatedSets)
 
 setMiniatures([...miniatures, miniatures])
+
+const handleSubmit = e => {
+        e.preventDefault();
+        fetch(`http://localhost:9292/miniatures/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(r => r.json())
+            .then((data) => updateMiniature(data))
+            navigate(`/miniatures/${id}`);
+        }

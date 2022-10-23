@@ -28,7 +28,7 @@ function App() {
     
     useEffect(() => {
         const fetchData = async () => {
-        const resp = await fetch('http://localhost:9292/miniatures/alphabetical')
+        const resp = await fetch('http://localhost:9292/miniatures')
         const data = await resp.json();
         setMiniatures(data)
         }
@@ -40,15 +40,15 @@ function App() {
     <div className = "App">
       <Navigation/>
         <Routes>
-          <Route exact path="/" element={<Home />}/>
+          <Route exact path="/" element={<Home miniatures={ miniatures } />}/>
           <Route exact path="/sets" element={<Sets sets={ sets }/>}/>
           <Route exact path="/sets/:id" element={<SetPage sets={ sets } setSets={ setSets } />}/>
-          <Route exact path="/newset" element={<NewSet sets={ sets } setSets={ setSets }/>}/>
+          <Route exact path="/newset" element={<NewSet sets={ sets } setSets={ setSets } />}/>
           <Route exact path="/sets/:id/edit" element={<EditSet sets={ sets } setSets={ setSets } />}/>
           <Route exact path="/miniatures" element={<Miniatures miniatures={ miniatures }/>}/>
-          <Route exact path="/miniatures/:id" element={<MiniaturePage miniatures={ miniatures } setMiniatures={ setMiniatures } />}/>
-          <Route exact path="/sets/:miniatureSetId/miniatures/new" element={<NewMiniature/>}/>
-          <Route exact path="/miniatures/:id/edit" element={<EditMiniature />}/>
+          <Route exact path="/miniatures/:id" element={<MiniaturePage miniatures={ miniatures } setMiniatures={ setMiniatures } sets={ sets } setSets={ setSets }/>}/>
+          <Route exact path="/sets/:miniatureSetId/miniatures/new" element={<NewMiniature miniatures={ miniatures } setMiniatures={ setMiniatures } sets={ sets } setSets={ setSets } />}/>
+          <Route exact path="/miniatures/:id/edit" element={<EditMiniature miniatures={ miniatures } setMiniatures={ setMiniatures } />}/>
         </Routes>
     </div>
 
