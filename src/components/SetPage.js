@@ -19,8 +19,8 @@ function SetPage({ sets, setSets }) {
 
     const miniatureCards = set.miniatures?.map((miniature, index)  => <MiniatureCard key={ index } miniature={ miniature }/>)
 
-    const handleDelete = async () => {
-        await fetch(`http://localhost:9292/miniature_sets/${id}`, 
+    const handleDelete = () => {
+        fetch(`http://localhost:9292/miniature_sets/${id}`, 
             { method: "DELETE" })
         removeSet(id);
         navigate("/sets");

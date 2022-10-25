@@ -14,21 +14,19 @@ function EditSet({ sets, setSets }) {
         setFormData(set);
         }, [])
 
-    const handleSubmit = async e  => {
+    const handleSubmit = e => {
         e.preventDefault();
-        const headers = {
-            "Content-Type": "application/json"
-        }
-        const options = {
+        fetch(`http://localhost:9292/miniature_sets/${id}`, {
             method: "PATCH",
-            headers,
-            body: JSON.stringify(formData)
+            headers: {
+                "Content-Type": "application/json"
+            },
+             body: JSON.stringify(formData)
+        })
+            .then(r => r.json())
+            .then((data) => updateSets(data))
+            navigate(`/sets/${id}`);
         }
-        const resp = await fetch(`http://localhost:9292/miniature_sets/${id}`, options);
-        const data = await resp.json();
-        updateSets(data);
-        navigate(`/sets/${id}`);
-    }
 
     const updateSets = (data) => {
         const updatedSet = {...data, miniatures: [...set.miniatures]};

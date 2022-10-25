@@ -7,8 +7,8 @@ function MiniaturePage({ miniatures, setMiniatures, sets, setSets }) {
     const miniature = miniatures.find(mini => mini.id===parseInt(id))
     const set = sets.find(s => s.id===parseInt(miniature?.miniature_set_id))
 
-    const handleDelete = async () => {
-        await fetch(`http://localhost:9292/miniatures/${id}`, 
+    const handleDelete = () => {
+        fetch(`http://localhost:9292/miniatures/${id}`, 
             { method: "DELETE" })
         removeMiniature(id)
         navigate(`/sets/${miniature.miniature_set_id}`);
