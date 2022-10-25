@@ -24,14 +24,19 @@ Miniature Tracker is an application used to catalog D&D and Tabletop RPG miniatu
 ### **Instructions**
 ---
 
-- Run db.json on localhost:3000.
-
+- Run npm start on localhost:3000.
 
 
 ### **Github**
 ---
 
 - https://github.com/giantcarlos/mini-tracker-client
+
+
+### **Server Github**
+---
+
+- https://github.com/giantcarlos/mini-tracker-server
 
 
 ### **Demo Video**
