@@ -17,24 +17,16 @@ function App() {
   const [ miniatures, setMiniatures ] = useState([]);
 
     useEffect(() => {
-        const fetchData = async () => {
-        const resp = await fetch('http://localhost:9292/miniature_sets')
-        const data = await resp.json();
-        setSets(data)
-        }
-        fetchData()
-            .catch(console.error);
-        }, [])
-    
+        fetch('http://localhost:9292/miniature_sets')
+        .then(res => res.json())
+        .then(data => setSets(data))
+      }, [])
+
     useEffect(() => {
-        const fetchData = async () => {
-        const resp = await fetch('http://localhost:9292/miniatures')
-        const data = await resp.json();
-        setMiniatures(data)
-        }
-        fetchData()
-            .catch(console.error);
-        }, [])
+        fetch('http://localhost:9292/miniatures')
+        .then(res => res.json())
+        .then(data => setMiniatures(data))
+      }, [])
 
     return (
     <div className = "App">

@@ -8,15 +8,11 @@ function SetPage({ sets, setSets }) {
     const [ set, setSet ] = useState([]);
 
     useEffect(() => {
-        const fetchData = async () => {
-        const resp = await fetch(`http://localhost:9292/miniature_sets/${id}`)
-        const data = await resp.json();
-        setSet(data)
-        }
-        fetchData()
-            .catch(console.error);
-        }, [])
-
+        fetch(`http://localhost:9292/miniature_sets/${id}`)
+        .then(res => res.json())
+        .then(data => setSet(data))
+    }, [])
+    
     const miniatureCards = set.miniatures?.map((miniature, index)  => <MiniatureCard key={ index } miniature={ miniature }/>)
 
     const handleDelete = () => {
