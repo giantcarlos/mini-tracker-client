@@ -12,7 +12,7 @@ function EditSet({ sets, setSets }) {
 
     useEffect(() => {
         setFormData(set);
-        }, [])
+        }, [sets])
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -25,11 +25,11 @@ function EditSet({ sets, setSets }) {
         })
             .then(r => r.json())
             .then((data) => updateSets(data))
-            navigate(`/sets/${id}`);
+            .then(() => navigate(`/sets/${id}`));
         }
 
     const updateSets = (data) => {
-        const updatedSet = {...data, miniatures: [...set.miniatures]};
+        const updatedSet = {...data, miniatures: [...data.miniatures]};
         setSets(sets.map(s => s.id===updatedSet.id ? updatedSet : s));
     }
 

@@ -28,11 +28,11 @@ function EditMiniature({ miniatures, setMiniatures }) {
         })
             .then(r => r.json())
             .then((data) => updateMiniature(data))
-            navigate(`/miniatures/${id}`);
+            .then(() => navigate(`/miniatures/${id}`));
         }
 
     const updateMiniature = (data) => {
-        setMiniatures(miniatures?.map(mini => mini.id===data.id ? data : mini));
+        setMiniatures(miniatures.map(mini => mini.id===data.id ? data : mini));
     }
 
     const handleChange = (e) => {

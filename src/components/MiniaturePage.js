@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
-function MiniaturePage({ miniatures, setMiniatures, sets, setSets }) {
+function MiniaturePage({ miniatures, setMiniatures, sets }) {
     const { id } = useParams();
     const navigate = useNavigate();
     const miniature = miniatures.find(mini => mini.id===parseInt(id))
@@ -10,8 +10,8 @@ function MiniaturePage({ miniatures, setMiniatures, sets, setSets }) {
     const handleDelete = () => {
         fetch(`http://localhost:9292/miniatures/${id}`, 
             { method: "DELETE" })
-        removeMiniature(id)
-        navigate(`/sets/${miniature.miniature_set_id}`);
+        .then(() => removeMiniature(id))
+        .then(() => navigate(`/sets/${miniature.miniature_set_id}`));
     }
 
     const removeMiniature = id => {

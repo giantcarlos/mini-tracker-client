@@ -13,21 +13,19 @@ function NewMiniature({ miniatures, setMiniatures, sets }) {
         img_url: ""
     });
 
-    const handleSubmit = async (e)  => {
+    const handleSubmit = e => {
         e.preventDefault();
-        const headers = {
-            "Content-Type": "application/json"
-        }
-        const options = {
+        fetch(`http://localhost:9292/miniature_sets/${miniatureSetId}/miniatures`, {
             method: "POST",
-            headers,
-            body: JSON.stringify(formData)
+            headers: {
+                "Content-Type": "application/json"
+            },
+             body: JSON.stringify(formData)
+        })
+            .then(r => r.json())
+            .then((data) => addMiniature(data))
+            .then(() => navigate(`/sets/${miniatureSetId}`));
         }
-        const resp = await fetch(`http://localhost:9292/miniature_sets/${miniatureSetId}/miniatures`, options);
-        const data = await resp.json();
-        addMiniature(data)
-        navigate(`/sets/${miniatureSetId}`);
-    }
 
     const addMiniature = (data) => {
         setMiniatures([data, ...miniatures])
@@ -42,7 +40,7 @@ function NewMiniature({ miniatures, setMiniatures, sets }) {
 
   return (
     <form className="set-form" onSubmit={handleSubmit}>
-        <h2>New Miniature for {set?.name}</h2>
+        <h2>New Miniature for {set.name}</h2>
         <div className="form-text">
             <label htmlFor="name">Name: 
                 <input type="textarea" id="name" value={formData.name} onChange={handleChange} required="required" autoFocus={true} /><br />

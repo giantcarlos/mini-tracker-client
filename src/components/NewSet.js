@@ -8,21 +8,19 @@ function NewSet({ sets, setSets }) {
         year: ""
     });
 
-    const handleSubmit = async e  => {
+    const handleSubmit = e => {
         e.preventDefault();
-        const headers = {
-            "Content-Type": "application/json"
-        }
-        const options = {
+        fetch("http://localhost:9292/miniature_sets", {
             method: "POST",
-            headers,
-            body: JSON.stringify(formData)
+            headers: {
+                "Content-Type": "application/json"
+            },
+             body: JSON.stringify(formData)
+        })
+            .then(r => r.json())
+            .then((data) => addSet(data))
+            .then(() => navigate("/sets"));
         }
-        const resp = await fetch("http://localhost:9292/miniature_sets", options)
-        const data = await resp.json();
-        addSet(data)
-        navigate("/sets");
-    }
 
     const addSet = (data) => {
         setSets([...sets, data])

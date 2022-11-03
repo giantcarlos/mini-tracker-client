@@ -18,8 +18,8 @@ function SetPage({ sets, setSets }) {
     const handleDelete = () => {
         fetch(`http://localhost:9292/miniature_sets/${id}`, 
             { method: "DELETE" })
-        removeSet(id);
-        navigate("/sets");
+        .then(() => removeSet(id))
+        .then(() => navigate("/sets"));
     }
 
     const removeSet = id => {
