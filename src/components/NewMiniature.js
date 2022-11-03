@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-function NewMiniature({ miniatures, setMiniatures, sets }) {
+function NewMiniature({ miniatures, setMiniatures, sets, setSets }) {
     const navigate = useNavigate();
     const { miniatureSetId } = useParams();
     const set = sets.find(s => s.id===parseInt(miniatureSetId))
@@ -29,6 +29,8 @@ function NewMiniature({ miniatures, setMiniatures, sets }) {
 
     const addMiniature = (data) => {
         setMiniatures([data, ...miniatures])
+        const updatedSet = {...set, miniatures: [data, ...(set.miniatures)]}
+        setSets(sets.map(s => s.id===updatedSet.id ? updatedSet : s))
     }
 
     const handleChange = (e) => {
@@ -46,7 +48,8 @@ function NewMiniature({ miniatures, setMiniatures, sets }) {
                 <input type="textarea" id="name" value={formData.name} onChange={handleChange} required="required" autoFocus={true} /><br />
             </label>
             <label htmlFor="rarity">Rarity: 
-                <select className="new-select" type="textarea" id="rarity" value={formData.rarity} onChange={handleChange}>
+                <select className="new-select" type="textarea" id="rarity" value={formData.rarity} onChange={handleChange} >
+                    <option value=""></option>
                     <option value="Common">Common</option>
                     <option value="Uncommon">Uncommon</option>
                     <option value="Rare">Rare</option>
@@ -54,7 +57,8 @@ function NewMiniature({ miniatures, setMiniatures, sets }) {
                 </select><br />
             </label>
             <label htmlFor="size">Size: 
-                <select className="new-select" type="textarea" id="size" value={formData.size} onChange={handleChange}>
+                <select className="new-select" type="textarea" id="size" value={formData.size} onChange={handleChange} >
+                    <option value=""></option>
                     <option value="Small">Small</option>
                     <option value="Medium">Medium</option>
                     <option value="Large">Large</option>
@@ -63,10 +67,10 @@ function NewMiniature({ miniatures, setMiniatures, sets }) {
                 </select><br />
             </label>
             <label htmlFor="units">Units: 
-                <input type="number" id="units" value={formData.units} onChange={handleChange} placeholder="1"/><br />
+                <input type="number" id="units" value={formData.units} onChange={handleChange} required="required" min="1" max="1000" /><br />
             </label>
             <label htmlFor="img_url">Image URL: 
-                <input type="textarea" id="img_url" value={formData.img_url} onChange={handleChange} /><br />
+                <input type="textarea" id="img_url" value={formData.img_url} onChange={handleChange} required="required" /><br />
             </label>
             <input type="submit" value="Submit" className="form-btn" />
         </div>

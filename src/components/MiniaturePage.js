@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
-function MiniaturePage({ miniatures, setMiniatures, sets }) {
+function MiniaturePage({ miniatures, setMiniatures, sets, setSets }) {
     const { id } = useParams();
     const navigate = useNavigate();
     const miniature = miniatures.find(mini => mini.id===parseInt(id))
@@ -16,6 +16,8 @@ function MiniaturePage({ miniatures, setMiniatures, sets }) {
 
     const removeMiniature = id => {
         setMiniatures(miniatures.filter(mini => mini.id !=id));
+        const updatedSet = {...set, miniatures: [...(set.miniatures.filter(mini => mini.id !=id))]};
+        setSets(sets.map(s => s.id===updatedSet.id ? updatedSet : s));
     }
 
   return (

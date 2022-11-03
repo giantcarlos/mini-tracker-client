@@ -41,7 +41,7 @@ function NewSet({ sets, setSets }) {
                 <input type="textarea" id="name" value={formData.name} onChange={handleChange} required="required" autoFocus={true}/><br />
             </label>
             <label htmlFor="year">Year: 
-                <input type="integer" id="year" value={formData.year} onChange={handleChange} /><br />
+                <input type="integer" id="year" value={formData.year} onChange={handleChange} required="required" /><br />
             </label>
             <input type="submit" value="Submit" className="form-btn" />
         </div>
