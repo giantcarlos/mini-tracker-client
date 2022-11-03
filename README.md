@@ -18,7 +18,6 @@ Miniature Tracker is an application used to catalog D&D and Tabletop RPG miniatu
 - JavaScript
 - React
 - React Router DOM
-- JSON
 
 
 ### **Instructions**
