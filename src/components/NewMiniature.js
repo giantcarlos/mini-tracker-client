@@ -25,11 +25,12 @@ function NewMiniature({ miniatures, setMiniatures, sets, setSets }) {
             .then(r => r.json())
             .then((data) => addMiniature(data))
             .then(() => navigate(`/sets/${miniatureSetId}`));
+            console.log(set.miniatures)
         }
 
     const addMiniature = (data) => {
         setMiniatures([data, ...miniatures])
-        const updatedSet = {...set, miniatures: [data, ...(set.miniatures)]}
+        const updatedSet = {...set, miniatures: [data, ...set.miniatures]}
         setSets(sets.map(s => s.id===updatedSet.id ? updatedSet : s))
     }
 
