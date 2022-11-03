@@ -34,7 +34,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home miniatures={ miniatures } />}/>
           <Route exact path="/sets" element={<Sets sets={ sets }/>}/>
-          <Route exact path="/sets/:id" element={<SetPage sets={ sets } setSets={ setSets } />}/>
+          <Route exact path="/sets/:id" element={<SetPage sets={ sets } setSets={ setSets } miniatures={ miniatures } setMiniatures={ setMiniatures } />}/>
           <Route exact path="/newset" element={<NewSet sets={ sets } setSets={ setSets } />}/>
           <Route exact path="/sets/:id/edit" element={<EditSet sets={ sets } setSets={ setSets } />}/>
           <Route exact path="/miniatures" element={<Miniatures miniatures={ miniatures }/>}/>

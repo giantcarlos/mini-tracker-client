@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import MiniatureCard from './MiniatureCard';
 
-function SetPage({ sets, setSets }) {
+function SetPage({ sets, setSets, miniatures, setMiniatures }) {
     const navigate = useNavigate();
     const { id } = useParams();
     const [ set, setSet ] = useState([]);
@@ -24,6 +24,7 @@ function SetPage({ sets, setSets }) {
 
     const removeSet = id => {
         setSets(sets.filter(s => s.id !=id))
+        setMiniatures(miniatures.filter(mini => mini.miniature_set_id !=id))
     }
 
   return (
