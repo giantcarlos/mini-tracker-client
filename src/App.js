@@ -23,7 +23,7 @@ function App() {
       }, [])
 
     useEffect(() => {
-        fetch('http://localhost:9292/miniatures')
+        fetch('http://localhost:9292/miniatures/alphabetical')
         .then(res => res.json())
         .then(data => setMiniatures(data))
       }, [])
