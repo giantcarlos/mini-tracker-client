@@ -6,13 +6,6 @@ function SetPage({ sets, setSets, miniatures, setMiniatures }) {
     const navigate = useNavigate();
     const { id } = useParams();
     const set = sets.find(set => set.id===parseInt(id))
-    // const [ set, setSet ] = useState([]);
-
-    // useEffect(() => {
-    //     fetch(`http://localhost:9292/miniature_sets/${id}`)
-    //     .then(res => res.json())
-    //     .then(data => setSet(data))
-    // }, [])
     
     const miniatureCards = set?.miniatures?.map((miniature, index)  => <MiniatureCard key={ index } miniature={ miniature }/>)
 
