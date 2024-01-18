@@ -240,3 +240,7 @@ input {
 label {
   font-weight: bold;
 }
+
+.sort-by {
+  margin-left: 3rem;
+}
